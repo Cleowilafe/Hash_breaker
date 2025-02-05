@@ -1,19 +1,19 @@
 import hashlib
 import argparse
 
-# Criando o parser de argumentos
-parser = argparse.ArgumentParser(description="Quebra um hash MD5 usando uma wordlist fornecida.")
-parser.add_argument('-w', '--wordlist', type=str, required=True, help="Caminho para o arquivo de wordlist")
-parser.add_argument('-u', '--hash', type=str, required=True, help="O hash MD5 a ser quebrado")
+# Creating the argument parser
+parser = argparse.ArgumentParser(description="Crack an MD5 hash using a provided wordlist.")
+parser.add_argument('-w', '--wordlist', type=str, required=True, help="Path to the wordlist file")
+parser.add_argument('-u', '--hash', type=str, required=True, help="The MD5 hash to be cracked")
 
-# Parse os argumentos fornecidos pelo usuário
+# Parse the arguments provided by the user
 args = parser.parse_args()
 
-# Variáveis a partir dos argumentos
+# Variables from the arguments
 wordlist = args.wordlist
 str2hash = args.hash
 
-# Tentando abrir o arquivo wordlist e comparar os hashes
+# Trying to open the wordlist file and compare the hashes
 try:
     with open(wordlist, 'r') as file:
         for cell in file:
